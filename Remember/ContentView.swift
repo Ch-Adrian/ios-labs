@@ -11,14 +11,15 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { geo in
             VStack(spacing: 16) {
-                // Purple stripe, 1/5 of the screen height
-                ZStack {
-                    Color.purple
-                    Text("Remember")
-                        .font(.system(size: 36, weight: .bold, design: .serif))
-                        .foregroundStyle(.white)
-                }
-                .frame(height: geo.size.height / 5)
+                // Purple rectangle hugging the text, centered in the top 1/5 of the screen
+                Text("Remember")
+                    .font(.system(size: 36, weight: .bold, design: .serif))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 24)
+                    .padding(.vertical, 12)
+                    .background(Color.purple)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: geo.size.height / 5)
 
                 Button(action: changeImage) {
                     Text("Change image")
@@ -35,7 +36,6 @@ struct ContentView: View {
             }
             .frame(maxWidth: .infinity)
         }
-        .ignoresSafeArea(edges: .top)
     }
 }
 
