@@ -11,7 +11,6 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { geo in
             VStack(spacing: 16) {
-                // Purple rectangle hugging the text, centered in the top 1/5 of the screen
                 Text("Remember")
                     .font(.system(size: 36, weight: .bold, design: .serif))
                     .foregroundStyle(.white)
